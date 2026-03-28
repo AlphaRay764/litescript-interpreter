@@ -22,7 +22,7 @@ public class Token {
     }
 
     public final Type type;    // Kind of token 
-    public final String value; // Thetext it came from
+    public final String value; // The text it came from
 
     public Token(Type type, String value) {
         this.type = type;
