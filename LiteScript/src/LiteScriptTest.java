@@ -1,3 +1,4 @@
+// Imports
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,7 +14,7 @@ public class LiteScriptTest {
         evaluator = new Evaluator();
     }
 
-    // Helper method to run a full input through the pipeline
+    // Helper method to run a full input through the pipeline and return the result
     private double run(String input) {
         Lexer lexer = new Lexer(input);
         List<Token> tokens = lexer.tokenize();
@@ -22,9 +23,7 @@ public class LiteScriptTest {
         return evaluator.evaluate(ast);
     }
 
-    // ==================
     // Lexer Tests
-    // ==================
 
     @Test
     void testLexerProducesNumberToken() {
@@ -67,9 +66,7 @@ public class LiteScriptTest {
         assertThrows(RuntimeException.class, lexer::tokenize);
     }
 
-    // ==================
     // Evaluator Tests
-    // ==================
 
     @Test
     void testSimpleAddition() {
@@ -108,9 +105,7 @@ public class LiteScriptTest {
         assertThrows(RuntimeException.class, () -> run("10 / 0"));
     }
 
-    // ==================
     // Variable Tests
-    // ==================
 
     @Test
     void testVariableAssignmentAndRetrieval() {
@@ -136,9 +131,7 @@ public class LiteScriptTest {
         assertThrows(RuntimeException.class, () -> run("z"));
     }
 
-    // ==================
     // Conditional Tests
-    // ==================
 
     @Test
     void testIfThenTrueBranch() {

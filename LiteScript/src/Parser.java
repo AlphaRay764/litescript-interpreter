@@ -1,3 +1,4 @@
+// Imports
 import java.util.List;
 
 public class Parser {
@@ -28,7 +29,7 @@ public class Parser {
         return t;
     }
 
-    // Entry point — parse a full statement
+    // Entry point, parses a full statement
     public Node parse() {
         Node result = parseStatement();
         expect(Token.Type.EOF);

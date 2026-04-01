@@ -1,3 +1,4 @@
+// Imports
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,7 +65,7 @@ public class Lexer {
         return tokens;
     }
 
-    // Reads a full number (handles multi-digit like 123)
+    // Reads a full number (handles multi-digit nums like 123)
     private Token readNumber() {
         StringBuilder sb = new StringBuilder();
         while (pos < input.length() && Character.isDigit(input.charAt(pos))) {

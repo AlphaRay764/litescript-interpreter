@@ -1,3 +1,4 @@
+// Imports
 import java.util.List;
 import java.util.Scanner;
 
@@ -35,7 +36,7 @@ public class Main {
                     System.out.println("  No variables stored yet.");
                 } else {
                     evaluator.getVariables().forEach((k, v) -> {
-                        // Print whole numbers cleanly e.g. 5.0 as 5
+                        // Print whole numbers cleanly (ex: 5.0 as 5)
                         if (v == Math.floor(v)) {
                             System.out.println("  " + k + " = " + (int) v.doubleValue());
                         } else {
@@ -59,7 +60,7 @@ public class Main {
                 // Step 3: Evaluate
                 double result = evaluator.evaluate(ast);
 
-                // Print result cleanly
+                // Print result (clean whole numbers)
                 if (result == Math.floor(result)) {
                     System.out.println("=> " + (int) result);
                 } else {

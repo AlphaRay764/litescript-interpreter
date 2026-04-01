@@ -1,3 +1,4 @@
+// Imports
 import java.util.HashMap;
 import java.util.Map;
 
@@ -6,7 +7,7 @@ public class Evaluator {
     // Stores variables and their values 
     private final Map<String, Double> variables = new HashMap<>();
 
-    // Main entry point, evaluates any node
+    // Main entry point and evaluates any node
     public double evaluate(Node node) {
 
         // A plain number, just returns it
@@ -69,7 +70,7 @@ public class Evaluator {
         throw new RuntimeException("Unknown node type: " + node.getClass());
     }
 
-    // REPL displays all stored variables
+    // REPL (Read, evaluate, print, loop) displays all stored variables
     public Map<String, Double> getVariables() {
         return variables;
     }
